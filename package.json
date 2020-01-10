@@ -3,15 +3,17 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js"
   },
   "dependencies": {
     "bcrypt": "^3.0.7",
     "body-parser": "latest",
+    "dotenv": "^8.2.0",
     "email-validator": "^2.0.4",
     "express": "~4.16.1",
     "express-unless": "^0.5.0",
     "http-errors": "~1.6.3",
+    "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.8.6"
   }
 }

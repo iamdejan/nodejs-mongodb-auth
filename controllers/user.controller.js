@@ -60,7 +60,9 @@ exports.authenticate = function(request, response, next) {
         }
         if(bcrypt.compareSync(password, user.password)) {
             response.set("Content-Type", "application/json");
-            response.send(user);
+            response.send({
+                token: user.generateAuthToken()
+            });
         } else {
             response.sendStatus(404);
         }
