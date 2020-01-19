@@ -8,14 +8,13 @@ let UserSchema = mongoose.Schema({
 });
 
 const signOptions = {
-    expiresIn:  "12h"
+    algorithm:  "HS512",
+    expiresIn:  "1h"
 };
 
 UserSchema.methods.generateAuthToken = function() {
     const user = this;
-    // console.log(process.env.SECRET_KEY);
     const token = jwt.sign({_id: user.id}, process.env.SECRET_KEY, signOptions);
-    // console.log("Token:", token);
     return token;
 };
 
