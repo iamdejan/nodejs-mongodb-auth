@@ -22,7 +22,6 @@ db.on("open", () => {
     console.log("MongoDB connected");
 });
 
-//TODO: add auth middleware later
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use("/user", user);
